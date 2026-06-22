@@ -18,13 +18,13 @@ export default function Hero() {
               href="https://play.google.com/store/apps/details?id=com.idmasoft.robotrespondermsg"
               target="_blank"
               rel="noreferrer"
-              className="inline-flex items-center justify-center rounded-full bg-slate-950 px-6 py-3 text-sm font-semibold text-white transition hover:bg-slate-800"
+              className="inline-flex items-center justify-center rounded-[1.25rem] bg-slate-950 px-6 py-3 text-sm font-semibold text-white transition hover:bg-slate-800"
             >
               Download on Google Play
             </a>
             <a
               href="#video"
-              className="inline-flex items-center justify-center rounded-full border border-slate-300 bg-white px-6 py-3 text-sm font-semibold text-slate-950 transition hover:border-slate-400 hover:bg-slate-50"
+              className="inline-flex items-center justify-center rounded-[1.25rem] border border-slate-300 bg-white px-6 py-3 text-sm font-semibold text-slate-950 transition hover:border-slate-400 hover:bg-slate-50"
             >
               Watch Demo
             </a>

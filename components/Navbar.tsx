@@ -5,7 +5,7 @@ export default function Navbar() {
     <header className="sticky top-0 z-30 border-b border-slate-200 bg-white/95 backdrop-blur-xl">
       <div className="mx-auto flex flex-wrap items-center justify-between gap-3 px-6 py-4 sm:px-8 lg:px-12">
         <a href="#top" className="flex min-w-0 items-center gap-3">
-          <Image src="/logo.svg" alt="SellerResponder" width={32} height={32} />
+          <Image src="/sellerresponder-logo.svg" alt="SellerResponder" width={32} height={32} />
           <span className="text-base font-semibold tracking-tight text-slate-950 sm:text-lg whitespace-nowrap">
             SellerResponder
           </span>

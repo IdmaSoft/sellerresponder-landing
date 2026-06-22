@@ -17,7 +17,7 @@ export const metadata: Metadata = {
   description:
     "Respond faster, automate replies and improve buyer engagement on Facebook Marketplace with SellerResponder.",
   icons: {
-    icon: "/logo.svg",
+    icon: "/sellerresponder-logo.svg",
   },
   keywords: [
     "Facebook Marketplace",
