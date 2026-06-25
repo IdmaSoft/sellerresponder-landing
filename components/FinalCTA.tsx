@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 export default function FinalCTA() {
   return (
     <section className="mx-auto max-w-7xl px-6 py-16 sm:px-8 lg:px-12">
@@ -16,8 +18,15 @@ export default function FinalCTA() {
             href="https://play.google.com/store/apps/details?id=com.idmasoft.robotrespondermsg"
             target="_blank"
             rel="noreferrer"
-            className="mt-10 inline-flex items-center justify-center rounded-full bg-white px-8 py-4 text-sm font-semibold text-slate-950 transition hover:bg-slate-100"
+            className="mt-10 inline-flex items-center gap-2 rounded-[1.5rem] bg-white px-6 py-3 text-sm font-semibold text-slate-950 shadow-sm shadow-slate-950/10 transition duration-200 hover:bg-slate-100"
           >
+            <Image
+              src="/google-play-logo.svg"
+              alt="Google Play logo"
+              width={20}
+              height={20}
+              className="h-5 w-5"
+            />
             Download on Google Play
           </a>
         </div>
