@@ -14,7 +14,7 @@ export default function Navbar() {
         <div className="flex flex-wrap items-center gap-2 sm:gap-3">
           <a
             href="#video"
-            className="hidden shrink-0 rounded-full border border-slate-300 bg-white px-4 py-2 text-sm font-semibold text-slate-950 transition hover:border-slate-400 hover:bg-slate-50 sm:inline-flex"
+            className="hidden shrink-0 rounded-full border border-[#084B8A] bg-white px-4 py-2 text-sm font-semibold text-[#084B8A] transition hover:border-[#0A66C2] hover:bg-slate-50 sm:inline-flex"
           >
             Watch Demo
           </a>
@@ -22,7 +22,7 @@ export default function Navbar() {
             href="https://play.google.com/store/apps/details?id=com.idmasoft.robotrespondermsg"
             target="_blank"
             rel="noreferrer"
-            className="inline-flex shrink-0 items-center justify-center rounded-full bg-slate-950 px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-slate-800"
+            className="inline-flex shrink-0 items-center justify-center rounded-full bg-[#0A66C2] px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-[#084B8A]"
           >
             Download
           </a>

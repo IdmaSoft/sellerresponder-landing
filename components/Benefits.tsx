@@ -58,11 +58,15 @@ export default function Benefits() {
             key={benefit.title}
             className="rounded-[1.75rem] border border-slate-200 bg-white p-8 shadow-sm shadow-slate-200/40"
           >
-            <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-slate-950 text-lg text-white">
-              {benefit.icon}
+            <div className="flex items-start gap-4">
+              <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-[#0A66C2] text-lg text-white">
+                {benefit.icon}
+              </div>
+              <div>
+                <h3 className="text-xl font-semibold text-slate-950">{benefit.title}</h3>
+              </div>
             </div>
-            <h3 className="mt-6 text-xl font-semibold text-slate-950">{benefit.title}</h3>
-            <p className="mt-3 text-slate-600">{benefit.description}</p>
+            <p className="mt-4 text-slate-600">{benefit.description}</p>
           </article>
         ))}
       </div>
