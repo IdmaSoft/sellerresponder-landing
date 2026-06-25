@@ -24,7 +24,7 @@ export default function Hero() {
                 className="inline-flex items-center gap-2 rounded-[1.5rem] bg-[#0A66C2] px-6 py-3 text-sm font-semibold text-white shadow-sm shadow-[#0A66C2]/20 transition duration-200 hover:bg-[#084B8A]"
               >
                 <Image
-                  src="/google-play-logo.svg"
+                  src="/images/logos/google-play-logo.svg"
                   alt="Google Play logo"
                   width={20}
                   height={20}
@@ -64,7 +64,7 @@ export default function Hero() {
           <div className="mt-4 rounded-[2rem] border border-slate-200/70 bg-white p-6 shadow-sm shadow-slate-200/40 lg:flex-1">
             <div className="hidden lg:block relative mx-auto w-[80%] max-w-[560px] max-h-[420px] aspect-[9/16] rounded-[1.5rem] overflow-hidden">
               <Image
-                src="/sellerresponder-chat-web.png"
+                src="/images/screenshots/sellerresponder-chat-web.png"
                 alt="SellerResponder desktop response screenshot"
                 fill
                 className="object-contain"
@@ -72,7 +72,7 @@ export default function Hero() {
             </div>
             <div className="block lg:hidden relative mx-auto w-[90%] max-w-[360px] aspect-[9/16] rounded-[1.5rem] overflow-hidden">
               <Image
-                src="/sellerresponder-chat.png"
+                src="/images/screenshots/sellerresponder-chat.png"
                 alt="SellerResponder app response screenshot"
                 fill
                 className="object-contain"

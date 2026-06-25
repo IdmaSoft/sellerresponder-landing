@@ -21,7 +21,7 @@ export default function FinalCTA() {
             className="mt-10 inline-flex items-center gap-2 rounded-[1.5rem] bg-white px-6 py-3 text-sm font-semibold text-slate-950 shadow-sm shadow-slate-950/10 transition duration-200 hover:bg-slate-100"
           >
             <Image
-              src="/google-play-logo.svg"
+              src="/images/logos/google-play-logo.svg"
               alt="Google Play logo"
               width={20}
               height={20}

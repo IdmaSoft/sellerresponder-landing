@@ -2,22 +2,22 @@ import Image from "next/image";
 
 const screenshots = [
   {
-    src: "/screenshots/screenshot1.png",
-    alt: "SellerResponder inbox screenshot",
-    caption: "Marketplace buyer message and quick reply template.",
+    src: "/images/screenshots/screenshot1.png",
+    alt: "SellerResponder dashboard screenshot",
+    caption: "SellerResponder dashboard.",
   },
   {
-    src: "/screenshots/screenshot2.png",
+    src: "/images/screenshots/screenshot2.png",
     alt: "SellerResponder templates screenshot",
     caption: "Custom message templates for faster answers.",
   },
   {
-    src: "/screenshots/screenshot3.png",
+    src: "/images/screenshots/screenshot3.png",
     alt: "SellerResponder automation screenshot",
     caption: "Automatic greeting and response flow.",
   },
   {
-    src: "/screenshots/screenshot4.png",
+    src: "/images/screenshots/screenshot4.png",
     alt: "SellerResponder setup screenshot",
     caption: "Easy Android setup and app controls.",
   },
