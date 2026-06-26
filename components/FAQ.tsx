@@ -33,10 +33,19 @@ const faqItems = [
     answer:
       "It sends instant replies, uses templates for common questions, and keeps your buyer conversations active so you don’t miss sales.",
   },
+{
+    question: "Can I send images in automatic replies?",
+    answer:
+      "No. SellerResponder sends replies through Messenger notifications, which do not support sending images directly.As an alternative, you can upload your photos to services like Google Drive, OneDrive, Dropbox, or any public image hosting service, then include the shareable link in your automatic reply. This lets customers easily view your product photos with a single tap.",
+  },
 ];
 
 export default function FAQ() {
-  const [openIndex, setOpenIndex] = useState<number | null>(0);
+  const [openIndex, setOpenIndex] = useState<number | null>(null);
+
+  const handleFaqToggle = (index: number) => {
+    setOpenIndex((current) => (current === index ? null : index));
+  };
 
   return (
     <section className="mx-auto max-w-7xl px-6 py-16 sm:px-8 lg:px-12">
@@ -54,18 +63,21 @@ export default function FAQ() {
           const isOpen = openIndex === index;
 
           return (
-            <button
+            <details
               key={item.question}
-              type="button"
-              onClick={() => setOpenIndex(isOpen ? null : index)}
-              className="w-full rounded-[1.5rem] border border-slate-200 bg-white p-6 text-left shadow-sm shadow-slate-200/40 transition hover:border-slate-300"
+              className="w-full rounded-[1.5rem] border border-slate-200 bg-white shadow-sm shadow-slate-200/40 transition hover:border-slate-300"
             >
-              <div className="flex items-center justify-between gap-4">
+              <summary
+                className="flex cursor-pointer items-center justify-between gap-4 rounded-[1.5rem] p-6 text-left outline-none list-none marker:hidden"
+                onClick={() => handleFaqToggle(index)}
+              >
                 <span className="text-base font-semibold text-slate-950">{item.question}</span>
                 <span className="text-slate-500">{isOpen ? "−" : "+"}</span>
+              </summary>
+              <div className="px-6 pb-6 pt-0 text-slate-600">
+                <p>{item.answer}</p>
               </div>
-              {isOpen && <p className="mt-4 text-slate-600">{item.answer}</p>}
-            </button>
+            </details>
           );
         })}
       </div>
