@@ -7,27 +7,37 @@ const screenshots = [
   {
     src: "/images/screenshots/screenshot1.png",
     alt: "SellerResponder dashboard screenshot",
-    caption: "SellerResponder dashboard.",
+    caption: "Everything you need, all in one place.",
   },
   {
     src: "/images/screenshots/screenshot2.png",
-    alt: "SellerResponder templates screenshot",
-    caption: "Custom message templates for faster answers.",
+    alt: "SellerResponder add title screenshot",
+    caption: "Add or edit the exact title of your Marketplace listing.",
   },
   {
     src: "/images/screenshots/screenshot3.png",
-    alt: "SellerResponder automation screenshot",
-    caption: "Automatic greeting and response flow.",
+    alt: "SellerResponder view, copy, edit screenshot",
+    caption: "View, copy, edit, or delete your saved post titles.",
   },
   {
     src: "/images/screenshots/screenshot4.png",
-    alt: "SellerResponder setup screenshot",
-    caption: "Easy Android setup and app controls.",
+    alt: "SellerResponder questions and responses screenshot",
+    caption: "Turn common questions into automatic responses.",
   },
   {
     src: "/images/screenshots/screenshot5.png",
-    alt: "SellerResponder sales screenshot",
-    caption: "Performance and chat tools in one view.",
+    alt: "SellerResponder view, copy, edit replies screenshot",
+    caption: "View, copy, edit, or delete your automatic replies.",
+  },
+    {
+    src: "/images/screenshots/screenshot6.png",
+    alt: "SellerResponder test screenshot",
+    caption: "Test your automatic replies before going live.",
+  },
+  {
+    src: "/images/screenshots/screenshot7.png",
+    alt: "SellerResponder setup screenshot",
+    caption: "Customize how automatic replies work.",
   },
 ];
 
@@ -40,6 +50,14 @@ export default function Screenshots() {
     const item = carousel?.children[index] as HTMLElement | undefined;
     if (!carousel || !item) return;
     carousel.scrollTo({ left: item.offsetLeft, behavior: "smooth" });
+  };
+
+  const handlePrev = () => {
+    scrollToIndex(Math.max(0, activeIndex - 1));
+  };
+
+  const handleNext = () => {
+    scrollToIndex(Math.min(screenshots.length - 1, activeIndex + 1));
   };
 
   useEffect(() => {
@@ -79,42 +97,46 @@ export default function Screenshots() {
       </div>
 
       <div className="mt-12">
-        <div
-          ref={carouselRef}
-          className="flex snap-x snap-mandatory gap-6 overflow-x-auto pb-6 scroll-smooth"
-        >
-          {screenshots.map((screenshot) => (
-            <figure
-              key={screenshot.src}
-              className="snap-start flex-shrink-0 w-[220px] overflow-hidden rounded-[1.75rem] border border-slate-200 bg-white shadow-sm shadow-slate-200/40 md:w-[240px]"
-            >
-              <div className="relative aspect-[4/6] bg-slate-100">
-                <Image
-                  src={screenshot.src}
-                  alt={screenshot.alt}
-                  fill
-                  className="object-cover"
-                  sizes="(max-width: 768px) 220px, 240px"
-                />
-              </div>
-              <figcaption className="px-5 py-4 text-sm leading-6 text-slate-600">
-                {screenshot.caption}
-              </figcaption>
-            </figure>
-          ))}
-        </div>
+        <div className="relative">
+          <div
+            ref={carouselRef}
+            className="flex snap-x snap-mandatory gap-6 overflow-x-auto pb-6 scroll-smooth scrollbar-none"
+          >
+            {screenshots.map((screenshot) => (
+              <figure
+                key={screenshot.src}
+                className="snap-start flex-shrink-0 w-[220px] overflow-hidden rounded-[1.75rem] border border-slate-200 bg-white shadow-sm shadow-slate-200/40 md:w-[240px]"
+              >
+                <div className="relative aspect-[4/6] bg-slate-100">
+                  <Image
+                    src={screenshot.src}
+                    alt={screenshot.alt}
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 768px) 220px, 240px"
+                  />
+                </div>
+                <figcaption className="px-5 py-4 text-sm leading-6 text-slate-600">
+                  {screenshot.caption}
+                </figcaption>
+              </figure>
+            ))}
+          </div>
 
-        <div className="mt-6 flex justify-center gap-2">
-          {screenshots.map((_, index) => (
-            <button
-              key={index}
-              onClick={() => scrollToIndex(index)}
-              className={`h-2.5 w-2.5 rounded-full transition ${
-                index === activeIndex ? "bg-slate-950" : "bg-slate-300"
-              }`}
-              aria-label={`Go to screenshot ${index + 1}`}
-            />
-          ))}
+          <button
+            onClick={handlePrev}
+            className="hidden sm:flex absolute left-0 top-1/2 z-10 -translate-y-1/2 rounded-full bg-[#0A66C2] p-3 text-lg text-white shadow-xl shadow-slate-200/40 transition hover:bg-[#084B8A]"
+            aria-label="Previous screenshot"
+          >
+            ‹
+          </button>
+          <button
+            onClick={handleNext}
+            className="hidden sm:flex absolute right-0 top-1/2 z-10 -translate-y-1/2 rounded-full bg-[#0A66C2] p-3 text-lg text-white shadow-xl shadow-slate-200/40 transition hover:bg-[#084B8A]"
+            aria-label="Next screenshot"
+          >
+            ›
+          </button>
         </div>
       </div>
     </section>
