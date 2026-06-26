@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function FinalCTA() {
   return (
-    <section className="mx-auto max-w-7xl px-6 py-16 sm:px-8 lg:px-12">
+    <section className="mx-auto max-w-screen-xl px-6 py-16 sm:px-8 lg:px-12">
       <div className="overflow-hidden rounded-[2rem] bg-[#084B8A] px-8 py-16 shadow-[0_40px_120px_-40px_rgba(15,23,42,0.35)] sm:px-12">
         <div className="mx-auto max-w-3xl text-center text-white">
           <p className="text-sm font-semibold uppercase tracking-[0.28em] text-slate-200">

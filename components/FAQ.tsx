@@ -49,7 +49,7 @@ export default function FAQ() {
   const detailsRefs = useRef<(HTMLDetailsElement | null)[]>([]);
 
   return (
-    <section className="mx-auto max-w-7xl px-6 py-16 sm:px-8 lg:px-12">
+    <section className="mx-auto max-w-screen-xl px-6 py-16 sm:px-8 lg:px-12">
       <div className="mx-auto max-w-3xl text-center">
         <p className="text-sm font-semibold uppercase tracking-[0.28em] text-slate-500">
           Frequently asked questions

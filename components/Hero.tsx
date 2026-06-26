@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function Hero() {
   return (
-    <section id="top" className="mx-auto max-w-7xl px-6 py-12 sm:px-8 lg:px-12">
+    <section id="top" className="mx-auto max-w-screen-xl px-6 py-12 sm:px-8 lg:px-12">
       <div className="grid gap-16 lg:grid-cols-[1.1fr_0.9fr] lg:items-start">
         <div className="max-w-2xl">
           <div>
