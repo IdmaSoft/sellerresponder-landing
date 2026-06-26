@@ -25,6 +25,7 @@ export const metadata: Metadata = {
     "Android app",
     "marketplace sellers",
     "seller automation",
+    "Autoresponder",
   ],
   openGraph: {
     title: "SellerResponder - Automatic Replies for Facebook Marketplace Sellers",

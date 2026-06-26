@@ -9,6 +9,11 @@ const faqItems = [
       "Yes. SellerResponder is designed for Marketplace sellers and helps you reply faster to buyer messages from Facebook Marketplace.",
   },
   {
+    question: "Is SellerResponder affiliated with Facebook or Meta?",
+    answer:
+      "No. SellerResponder is an independent app for Marketplace sellers and is not affiliated with, sponsored by, or endorsed by Facebook or Meta.",
+  },
+  {
     question: "Can I customize automatic replies?",
     answer:
       "Absolutely. Create and edit your own reply templates so every buyer gets the right message in the right tone.",
