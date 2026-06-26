@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useRef } from "react";
 
 const faqItems = [
   {
@@ -41,11 +41,7 @@ const faqItems = [
 ];
 
 export default function FAQ() {
-  const [openIndex, setOpenIndex] = useState<number | null>(null);
-
-  const handleFaqToggle = (index: number) => {
-    setOpenIndex((current) => (current === index ? null : index));
-  };
+  const detailsRefs = useRef<(HTMLDetailsElement | null)[]>([]);
 
   return (
     <section className="mx-auto max-w-7xl px-6 py-16 sm:px-8 lg:px-12">
@@ -59,27 +55,31 @@ export default function FAQ() {
       </div>
 
       <div className="mt-12 space-y-4">
-        {faqItems.map((item, index) => {
-          const isOpen = openIndex === index;
-
-          return (
-            <details
-              key={item.question}
-              className="w-full rounded-[1.5rem] border border-slate-200 bg-white shadow-sm shadow-slate-200/40 transition hover:border-slate-300"
+        {faqItems.map((item, index) => (
+          <details
+            key={item.question}
+            ref={(el) => { detailsRefs.current[index] = el; }}
+            className="w-full rounded-[1.5rem] border border-slate-200 bg-white shadow-sm shadow-slate-200/40 transition hover:border-slate-300"
+          >
+            <summary
+              className="flex cursor-pointer items-center justify-between gap-4 rounded-[1.5rem] p-6 text-left outline-none list-none marker:hidden"
+              onClick={() => {
+                detailsRefs.current.forEach((el, i) => {
+                  if (i !== index && el && el.open) {
+                    el.removeAttribute("open");
+                  }
+                });
+              }}
             >
-              <summary
-                className="flex cursor-pointer items-center justify-between gap-4 rounded-[1.5rem] p-6 text-left outline-none list-none marker:hidden"
-                onClick={() => handleFaqToggle(index)}
-              >
-                <span className="text-base font-semibold text-slate-950">{item.question}</span>
-                <span className="text-slate-500">{isOpen ? "−" : "+"}</span>
-              </summary>
-              <div className="px-6 pb-6 pt-0 text-slate-600">
-                <p>{item.answer}</p>
-              </div>
-            </details>
-          );
-        })}
+              <span className="text-base font-semibold text-slate-950">{item.question}</span>
+              <span className="faq-plus text-slate-500">+</span>
+              <span className="faq-minus text-slate-500">−</span>
+            </summary>
+            <div className="px-6 pb-6 pt-0 text-slate-600">
+              <p>{item.answer}</p>
+            </div>
+          </details>
+        ))}
       </div>
     </section>
   );

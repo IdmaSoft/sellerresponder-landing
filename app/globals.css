@@ -33,3 +33,7 @@ body {
 .scrollbar-none::-webkit-scrollbar {
   display: none;
 }
+
+details .faq-minus { display: none; }
+details[open] .faq-plus { display: none; }
+details[open] .faq-minus { display: inline; }
