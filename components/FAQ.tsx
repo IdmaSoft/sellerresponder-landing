@@ -45,46 +45,100 @@ const faqItems = [
   },
 ];
 
-export default function FAQ() {
-  const detailsRefs = useRef<(HTMLDetailsElement | null)[]>([]);
+const middle = Math.ceil(faqItems.length / 2);
 
+const leftItems = faqItems.slice(0, middle);
+const rightItems = faqItems.slice(middle);
+
+function FAQColumn({
+  items,
+  startIndex,
+  detailsRefs,
+}: {
+  items: typeof faqItems;
+  startIndex: number;
+  detailsRefs: React.MutableRefObject<(HTMLDetailsElement | null)[]>;
+}) {
   return (
-    <section className="mx-auto max-w-screen-xl px-6 py-16 sm:px-8 lg:px-12">
-      <div className="mx-auto max-w-3xl text-center">
-        <p className="text-sm font-semibold uppercase tracking-[0.28em] text-slate-500">
-          Frequently asked questions
-        </p>
-        <h2 className="mt-4 text-3xl font-semibold tracking-tight text-slate-950 sm:text-4xl">
-          Everything Marketplace sellers need to know.
-        </h2>
-      </div>
+    <div className="space-y-4">
+      {items.map((item, index) => {
+        const realIndex = startIndex + index;
 
-      <div className="mt-12 space-y-4">
-        {faqItems.map((item, index) => (
+        return (
           <details
             key={item.question}
-            ref={(el) => { detailsRefs.current[index] = el; }}
-            className="w-full rounded-[1.5rem] border border-slate-200 bg-white shadow-sm shadow-slate-200/40 transition hover:border-slate-300"
+            ref={(el) => {
+              detailsRefs.current[realIndex] = el;
+            }}
+            className="rounded-3xl border border-slate-200 bg-white/30 shadow-sm transition hover:border-slate-300"
           >
             <summary
-              className="flex cursor-pointer items-center justify-between gap-4 rounded-[1.5rem] p-6 text-left outline-none list-none marker:hidden"
+              className="flex cursor-pointer items-center justify-between gap-4 p-6 list-none"
               onClick={() => {
                 detailsRefs.current.forEach((el, i) => {
-                  if (i !== index && el && el.open) {
+                  if (i !== realIndex && el?.open) {
                     el.removeAttribute("open");
                   }
                 });
               }}
             >
-              <span className="text-base font-semibold text-slate-950">{item.question}</span>
+              <span className="font-semibold text-slate-900">
+                {item.question}
+              </span>
+
               <span className="faq-plus text-slate-500">+</span>
               <span className="faq-minus text-slate-500">−</span>
             </summary>
-            <div className="px-6 pb-6 pt-0 text-slate-600">
-              <p>{item.answer}</p>
+
+            <div className="px-6 pb-6 text-slate-600">
+              {item.answer}
             </div>
           </details>
-        ))}
+        );
+      })}
+    </div>
+  );
+}
+
+export default function FAQ() {
+  const detailsRefs = useRef<(HTMLDetailsElement | null)[]>([]);
+
+  return (
+    <section className="relative overflow-hidden py-24">
+      <div className="pointer-events-none absolute inset-0 flex items-center justify-center">
+        <span className="text-[26rem] font-black text-[#084B8A]/15 select-none">
+          ?
+        </span>
+      </div>
+
+      <div className="relative mx-auto max-w-7xl px-6">
+
+        <div className="text-center">
+          <h2 className="text-4xl font-bold">
+            Frequently asked questions
+          </h2>
+
+          <p className="mt-4 text-slate-600">
+            Everything Marketplace sellers need to know.
+          </p>
+        </div>
+
+        <div className="mt-14 grid grid-cols-1 gap-6 lg:grid-cols-2 lg:gap-10">
+
+          <FAQColumn
+            items={leftItems}
+            startIndex={0}
+            detailsRefs={detailsRefs}
+          />
+
+          <FAQColumn
+            items={rightItems}
+            startIndex={middle}
+            detailsRefs={detailsRefs}
+          />
+
+        </div>
+
       </div>
     </section>
   );
