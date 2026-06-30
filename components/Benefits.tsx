@@ -56,17 +56,15 @@ export default function Benefits() {
         {benefits.map((benefit) => (
           <article
             key={benefit.title}
-            className="rounded-[1.75rem] border border-slate-200 bg-white p-8 shadow-sm shadow-slate-200/40"
+            className="relative overflow-hidden rounded-[1.75rem] border border-white/10 bg-white/10 p-8 backdrop-blur-xl shadow-[0_30px_80px_rgba(15,23,42,0.08)] transition duration-300 hover:shadow-[0_30px_100px_rgba(15,23,42,0.15)]"
           >
-            <div className="flex items-start gap-4">
-              <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-[#0A66C2] text-lg text-white">
-                {benefit.icon}
-              </div>
-              <div>
-                <h3 className="text-xl font-semibold text-slate-950">{benefit.title}</h3>
-              </div>
+            <div className="absolute -right-10 top-6 text-[6rem] font-semibold text-slate-900/10">
+              {benefit.icon}
             </div>
-            <p className="mt-4 text-slate-600">{benefit.description}</p>
+            <div className="relative">
+              <h3 className="text-xl font-semibold text-slate-950">{benefit.title}</h3>
+              <p className="mt-4 text-slate-600">{benefit.description}</p>
+            </div>
           </article>
         ))}
       </div>
