@@ -11,7 +11,7 @@ export default function Hero() {
       }}
     >
       <div className="relative mx-auto max-w-screen-xl">
-        <div className="grid gap-4 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
+        <div className="grid gap-4 lg:grid-cols-[1.2fr_0.8fr] xl:grid-cols-[1.25fr_0.75fr] lg:items-center">
           <div className="max-w-2xl">
             <div className="space-y-3 lg:space-y-5 xl:pr-10">
               <p className="text-sm font-semibold uppercase tracking-[0.28em] text-slate-300 text-center lg:text-left">
@@ -24,7 +24,7 @@ export default function Hero() {
                 SellerResponder helps Marketplace sellers automate replies, save time and improve response speed so they can convert more buyers before they move on.
               </p>
 
-              <div className="flex flex-col items-center gap-3 sm:flex-row sm:justify-start sm:items-center">
+              <div className="flex flex-col items-center gap-3 sm:flex-row sm:justify-start sm:items-center sm:gap-4">
                 <a
                   href="https://play.google.com/store/apps/details?id=com.idmasoft.robotrespondermsg"
                   target="_blank"
@@ -50,16 +50,16 @@ export default function Hero() {
             </div>
 
             <div className="mt-6 grid gap-2 sm:grid-cols-2">
-              <span className="inline-flex items-center justify-center rounded-full bg-white/10 px-4 py-2 text-sm font-medium text-slate-100">
+              <span className="inline-flex items-center justify-center rounded-full bg-white/10 border border-white/10 px-4 py-2 text-sm font-medium text-white">
                 ✓ Automatic Replies
               </span>
-              <span className="inline-flex items-center justify-center rounded-full bg-white/10 px-4 py-2 text-sm font-medium text-slate-100">
+              <span className="inline-flex items-center justify-center rounded-full bg-white/10 border border-white/10 px-4 py-2 text-sm font-medium text-white">
                 ✓ Custom Templates
               </span>
-              <span className="inline-flex items-center justify-center rounded-full bg-white/10 px-4 py-2 text-sm font-medium text-slate-100">
+              <span className="inline-flex items-center justify-center rounded-full bg-white/10 border border-white/10 px-4 py-2 text-sm font-medium text-white">
                 ✓ Android App
               </span>
-              <span className="inline-flex items-center justify-center rounded-full bg-white/10 px-4 py-2 text-sm font-medium text-slate-100">
+              <span className="inline-flex items-center justify-center rounded-full bg-white/10 border border-white/10 px-4 py-2 text-sm font-medium text-white">
                 ✓ Easy Setup
               </span>
             </div>
