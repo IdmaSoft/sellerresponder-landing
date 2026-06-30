@@ -1,6 +1,11 @@
 import Image from "next/image";
+import type { Dictionary } from "@/lib/getDictionary";
 
-export default function Hero() {
+type Props = {
+  dictionary: Dictionary;
+};
+
+export default function Hero({ dictionary }: Props) {
   return (
     <section
       id="top"
@@ -15,13 +20,13 @@ export default function Hero() {
           <div className="max-w-2xl">
             <div className="space-y-3 lg:space-y-5 xl:pr-10">
               <p className="text-sm font-semibold uppercase tracking-[0.28em] text-slate-300 text-center lg:text-left">
-                Never miss a buyer again
+                {dictionary.hero.eyebrow}
               </p>
               <h1 className="text-center text-4xl font-semibold tracking-tight text-white sm:text-5xl lg:text-left lg:text-5xl">
-                Respond faster to Facebook Marketplace buyers.
+                {dictionary.hero.title}
               </h1>
               <p className="mx-auto max-w-xl text-center text-lg leading-8 text-slate-300 lg:mx-0 lg:text-left">
-                SellerResponder helps Marketplace sellers automate replies, save time and improve response speed so they can convert more buyers before they move on.
+                {dictionary.hero.description}
               </p>
 
               <div className="flex flex-col items-center gap-3 sm:flex-row sm:justify-start sm:items-center sm:gap-4">
@@ -38,30 +43,26 @@ export default function Hero() {
                     height={20}
                     className="h-5 w-5"
                   />
-                  Download on Google Play
+                  {dictionary.hero.downloadButton}
                 </a>
                 <a
                   href="#video"
                   className="inline-flex items-center justify-center rounded-full border border-white/20 bg-white/10 px-5 py-2 text-sm font-semibold text-white transition duration-200 hover:bg-white/15"
                 >
-                  Watch Demo
+                  {dictionary.hero.watchDemoButton}
                 </a>
               </div>
             </div>
 
             <div className="mt-6 grid gap-2 sm:grid-cols-2">
-              <span className="inline-flex items-center justify-center rounded-full bg-white/10 border border-white/10 px-4 py-2 text-sm font-medium text-white">
-                ✓ Automatic Replies
-              </span>
-              <span className="inline-flex items-center justify-center rounded-full bg-white/10 border border-white/10 px-4 py-2 text-sm font-medium text-white">
-                ✓ Custom Templates
-              </span>
-              <span className="inline-flex items-center justify-center rounded-full bg-white/10 border border-white/10 px-4 py-2 text-sm font-medium text-white">
-                ✓ Android App
-              </span>
-              <span className="inline-flex items-center justify-center rounded-full bg-white/10 border border-white/10 px-4 py-2 text-sm font-medium text-white">
-                ✓ Easy Setup
-              </span>
+              {dictionary.hero.highlights.map((highlight) => (
+                <span
+                  key={highlight}
+                  className="inline-flex items-center justify-center rounded-full border border-white/10 bg-white/10 px-4 py-2 text-sm font-medium text-white"
+                >
+                  ✓ {highlight}
+                </span>
+              ))}
             </div>
           </div>
 

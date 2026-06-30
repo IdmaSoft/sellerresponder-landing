@@ -1,6 +1,11 @@
 import Image from "next/image";
+import type { Dictionary } from "@/lib/getDictionary";
 
-export default function FinalCTA() {
+type Props = {
+  dictionary: Dictionary;
+};
+
+export default function FinalCTA({ dictionary }: Props) {
   return (
     <section className="mx-auto max-w-screen-xl px-6 py-16 sm:px-8 lg:px-12">
       <div className="relative overflow-hidden rounded-[2rem] bg-[#084B8A] px-8 py-16 shadow-[0_40px_120px_-40px_rgba(15,23,42,0.35)] sm:px-12">
@@ -15,13 +20,13 @@ export default function FinalCTA() {
         </div>
         <div className="relative mx-auto max-w-3xl text-center text-white">
           <p className="text-sm font-semibold uppercase tracking-[0.28em] text-slate-200">
-            Ready to respond faster?
+            {dictionary.finalCta.eyebrow}
           </p>
           <h2 className="mt-4 text-4xl font-semibold tracking-tight sm:text-5xl">
-            Start Responding Faster Today
+            {dictionary.finalCta.title}
           </h2>
           <p className="mx-auto mt-6 max-w-2xl text-base leading-8 text-slate-200/80">
-            Download SellerResponder and avoid missing potential buyers because of slow response times.
+            {dictionary.finalCta.description}
           </p>
           <a
             href="https://play.google.com/store/apps/details?id=com.idmasoft.robotrespondermsg"
@@ -36,7 +41,7 @@ export default function FinalCTA() {
               height={20}
               className="h-5 w-5"
             />
-            Download on Google Play
+            {dictionary.finalCta.downloadButton}
           </a>
         </div>
       </div>

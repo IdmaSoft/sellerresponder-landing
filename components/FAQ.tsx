@@ -1,61 +1,18 @@
 "use client";
 
 import { useRef } from "react";
+import type { Dictionary } from "@/lib/getDictionary";
 
-const faqItems = [
-  {
-    question: "Does SellerResponder work with Facebook Marketplace?",
-    answer:
-      "Yes. SellerResponder is designed for Marketplace sellers and helps you reply faster to buyer messages from Facebook Marketplace.",
-  },
-  {
-    question: "Is SellerResponder affiliated with Facebook or Meta?",
-    answer:
-      "No. SellerResponder is an independent app for Marketplace sellers and is not affiliated with, sponsored by, or endorsed by Facebook or Meta.",
-  },
-  {
-    question: "Can I customize automatic replies?",
-    answer:
-      "Absolutely. Create and edit your own reply templates so every buyer gets the right message in the right tone.",
-  },
-  {
-    question: "Is SellerResponder easy to set up?",
-    answer:
-      "Yes. The Android app guides you through a quick installation and setup so you can start responding faster in minutes.",
-  },
-  {
-    question: "Does it work on Android?",
-    answer:
-      "SellerResponder is available for Android and built to run on devices used by Marketplace sellers.",
-  },
-  {
-    question: "Do I need technical knowledge?",
-    answer:
-      "No technical skills are required. The app is made for sellers, not developers.",
-  },
-  {
-    question: "How can SellerResponder help me respond faster?",
-    answer:
-      "It sends instant replies, uses templates for common questions, and keeps your buyer conversations active so you don’t miss sales.",
-  },
-{
-    question: "Can I send images in automatic replies?",
-    answer:
-      "No. SellerResponder sends replies through Messenger notifications, which do not support sending images directly.As an alternative, you can upload your photos to services like Google Drive, OneDrive, Dropbox, or any public image hosting service, then include the shareable link in your automatic reply. This lets customers easily view your product photos with a single tap.",
-  },
-];
-
-const middle = Math.ceil(faqItems.length / 2);
-
-const leftItems = faqItems.slice(0, middle);
-const rightItems = faqItems.slice(middle);
+type Props = {
+  dictionary: Dictionary;
+};
 
 function FAQColumn({
   items,
   startIndex,
   detailsRefs,
 }: {
-  items: typeof faqItems;
+  items: Dictionary["faqs"]["items"];
   startIndex: number;
   detailsRefs: React.MutableRefObject<(HTMLDetailsElement | null)[]>;
 }) {
@@ -100,8 +57,13 @@ function FAQColumn({
   );
 }
 
-export default function FAQ() {
+export default function FAQ({ dictionary }: Props) {
   const detailsRefs = useRef<(HTMLDetailsElement | null)[]>([]);
+
+  const middle = Math.ceil(dictionary.faqs.items.length / 2);
+
+  const leftItems = dictionary.faqs.items.slice(0, middle);
+  const rightItems = dictionary.faqs.items.slice(middle);
 
   return (
     <section className="relative overflow-hidden py-24">
@@ -115,11 +77,11 @@ export default function FAQ() {
 
         <div className="text-center">
           <h2 className="text-4xl font-bold">
-            Frequently asked questions
+            {dictionary.faqs.title}
           </h2>
 
           <p className="mt-4 text-slate-600">
-            Everything Marketplace sellers need to know.
+            {dictionary.faqs.description}
           </p>
         </div>
 

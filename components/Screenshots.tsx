@@ -2,46 +2,13 @@
 
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
+import type { Dictionary } from "@/lib/getDictionary";
 
-const screenshots = [
-  {
-    src: "/images/screenshots/screenshot1.png",
-    alt: "SellerResponder dashboard screenshot",
-    caption: "Everything you need, all in one place.",
-  },
-  {
-    src: "/images/screenshots/screenshot2.png",
-    alt: "SellerResponder add title screenshot",
-    caption: "Add or edit the exact title of your Marketplace listing.",
-  },
-  {
-    src: "/images/screenshots/screenshot3.png",
-    alt: "SellerResponder view, copy, edit screenshot",
-    caption: "View, copy, edit, or delete your saved post titles.",
-  },
-  {
-    src: "/images/screenshots/screenshot4.png",
-    alt: "SellerResponder questions and responses screenshot",
-    caption: "Turn common questions into automatic responses.",
-  },
-  {
-    src: "/images/screenshots/screenshot5.png",
-    alt: "SellerResponder view, copy, edit replies screenshot",
-    caption: "View, copy, edit, or delete your automatic replies.",
-  },
-    {
-    src: "/images/screenshots/screenshot6.png",
-    alt: "SellerResponder test screenshot",
-    caption: "Test your automatic replies before going live.",
-  },
-  {
-    src: "/images/screenshots/screenshot7.png",
-    alt: "SellerResponder setup screenshot",
-    caption: "Customize how automatic replies work.",
-  },
-];
+type Props = {
+  dictionary: Dictionary;
+};
 
-export default function Screenshots() {
+export default function Screenshots({ dictionary }: Props) {
   const carouselRef = useRef<HTMLDivElement | null>(null);
   const [activeIndex, setActiveIndex] = useState(0);
 
@@ -57,7 +24,7 @@ export default function Screenshots() {
   };
 
   const handleNext = () => {
-    scrollToIndex(Math.min(screenshots.length - 1, activeIndex + 1));
+    scrollToIndex(Math.min(dictionary.screenshots.items.length - 1, activeIndex + 1));
   };
 
   useEffect(() => {
@@ -86,13 +53,13 @@ export default function Screenshots() {
     <section className="mx-auto max-w-screen-xl px-6 py-16 sm:px-8 lg:px-12">
       <div className="mx-auto max-w-3xl text-center">
         <p className="text-sm font-semibold uppercase tracking-[0.28em] text-slate-500">
-          Screenshots
+          {dictionary.screenshots.eyebrow}
         </p>
         <h2 className="mt-4 text-3xl font-semibold tracking-tight text-slate-950 sm:text-4xl">
-          See how SellerResponder looks on Android.
+          {dictionary.screenshots.title}
         </h2>
         <p className="mx-auto mt-4 max-w-2xl text-base leading-7 text-slate-600">
-          Real app screens for Marketplace sellers, focused on fast replies and easy access to the templates you use every day.
+          {dictionary.screenshots.description}
         </p>
       </div>
 
@@ -102,7 +69,7 @@ export default function Screenshots() {
             ref={carouselRef}
             className="flex snap-x snap-mandatory gap-6 overflow-x-auto pb-6 scroll-smooth scrollbar-none"
           >
-            {screenshots.map((screenshot) => (
+            {dictionary.screenshots.items.map((screenshot) => (
               <figure
                 key={screenshot.src}
                 className="relative snap-start flex-shrink-0 w-[220px] overflow-hidden rounded-[1.75rem] border border-white/10 backdrop-blur-xl shadow-[0_10px_15px_rgba(15,23,42,0.12)] md:w-[240px]"
