@@ -105,9 +105,14 @@ export default function Screenshots() {
             {screenshots.map((screenshot) => (
               <figure
                 key={screenshot.src}
-                className="snap-start flex-shrink-0 w-[220px] overflow-hidden rounded-[1.75rem] border border-slate-200 bg-white shadow-sm shadow-slate-200/40 md:w-[240px]"
+                className="relative snap-start flex-shrink-0 w-[220px] overflow-hidden rounded-[1.75rem] border border-white/10 backdrop-blur-xl shadow-[0_10px_15px_rgba(15,23,42,0.12)] md:w-[240px]"
+                style={{
+                  backgroundColor:
+                    'color-mix(in oklab, lab(37 38.27 -107.24) 20%, #084b8a)',
+                }}
               >
-                <div className="relative aspect-[4/6] bg-slate-100">
+                <div className="pointer-events-none absolute right-0 top-0 h-24 w-24 rounded-full bg-[#0A66C2]/20 blur-2xl" />
+                <div className="relative aspect-[4/6] bg-slate-900/10">
                   <Image
                     src={screenshot.src}
                     alt={screenshot.alt}
@@ -116,7 +121,7 @@ export default function Screenshots() {
                     sizes="(max-width: 768px) 220px, 240px"
                   />
                 </div>
-                <figcaption className="px-5 py-4 text-sm leading-6 text-slate-600">
+                <figcaption className="relative px-5 py-4 text-sm leading-6 text-slate-100 bg-gradient-to-b from-white/10 via-[#0A66C2]/15 to-black/60 backdrop-blur-md border-t border-white/10">
                   {screenshot.caption}
                 </figcaption>
               </figure>

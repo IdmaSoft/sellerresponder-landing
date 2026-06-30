@@ -3,8 +3,17 @@ import Image from "next/image";
 export default function FinalCTA() {
   return (
     <section className="mx-auto max-w-screen-xl px-6 py-16 sm:px-8 lg:px-12">
-      <div className="overflow-hidden rounded-[2rem] bg-[#084B8A] px-8 py-16 shadow-[0_40px_120px_-40px_rgba(15,23,42,0.35)] sm:px-12">
-        <div className="mx-auto max-w-3xl text-center text-white">
+      <div className="relative overflow-hidden rounded-[2rem] bg-[#084B8A] px-8 py-16 shadow-[0_40px_120px_-40px_rgba(15,23,42,0.35)] sm:px-12">
+        <div className="pointer-events-none absolute inset-0 flex items-center justify-center opacity-20">
+          <Image
+            src="/images/logos/sellerresponder-logo.svg"
+            alt="SellerResponder logo background"
+            width={220}
+            height={220}
+            className="h-[220px] w-[220px] object-contain"
+          />
+        </div>
+        <div className="relative mx-auto max-w-3xl text-center text-white">
           <p className="text-sm font-semibold uppercase tracking-[0.28em] text-slate-200">
             Ready to respond faster?
           </p>
