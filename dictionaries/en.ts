@@ -1,7 +1,17 @@
 export const en = {
+  metadata: {
+    title: "SellerResponder - Automatic Replies for Facebook Marketplace Sellers",
+    description:
+      "Respond faster, automate replies and improve buyer engagement on Facebook Marketplace with SellerResponder.",
+    og: {
+      title: "SellerResponder - Automatic Replies for Facebook Marketplace Sellers",
+      description:
+        "Respond faster, automate replies and improve buyer engagement on Facebook Marketplace with SellerResponder.",
+    },
+  },
   navbar: {
     watchDemoButton: "Watch Demo",
-    downloadButton: "Download"
+    downloadButton: "Download",
   },
   hero: {
     eyebrow: "Never miss a buyer again",

@@ -6,20 +6,25 @@ import Hero from "@/components/Hero";
 import Navbar from "@/components/Navbar";
 import Screenshots from "@/components/Screenshots";
 import VideoDemo from "@/components/VideoDemo";
-import { getDictionary } from "@/lib/getDictionary";
+import { getDictionary, isValidLocale } from "@/lib/getDictionary";
+import { notFound } from "next/navigation";
 
-export default async function Home({
-  params,
-}: {
-  params: Promise<{ locale: "en" | "es" }>;
-}) {
+type Props = {
+  params: Promise<{ locale: string }>;
+};
+
+export default async function Home({ params }: Props) {
   const { locale } = await params;
 
-  const dictionary = await getDictionary(locale);
+  if (!isValidLocale(locale)) {
+    notFound();
+  }
+
+  const dictionary = getDictionary(locale);
 
   return (
     <div className="bg-slate-50 text-slate-950">
-      <Navbar dictionary={dictionary} />
+      <Navbar dictionary={dictionary} locale={locale} />
       <main>
         <Hero dictionary={dictionary} />
         <VideoDemo dictionary={dictionary} />

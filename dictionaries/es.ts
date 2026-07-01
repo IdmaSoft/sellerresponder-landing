@@ -1,7 +1,17 @@
 export const es = {
+  metadata: {
+    title: "SellerResponder - Respuestas automáticas para vendedores de Facebook Marketplace",
+    description:
+      "Responde más rápido, automatiza respuestas y mejora la atención a compradores en Facebook Marketplace con SellerResponder.",
+    og: {
+      title: "SellerResponder - Respuestas automáticas para vendedores de Facebook Marketplace",
+      description:
+        "Responde más rápido, automatiza respuestas y mejora la atención a compradores en Facebook Marketplace con SellerResponder.",
+    },
+  },
   navbar: {
     watchDemoButton: "Ver demo",
-    downloadButton: "Descargar"
+    downloadButton: "Descargar",
   },
   hero: {
     eyebrow: "Nunca pierdas otro comprador",
