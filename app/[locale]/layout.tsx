@@ -36,6 +36,11 @@ export async function generateMetadata({ params }: MetadataProps): Promise<Metad
   };
 }
 
-export default function LocaleLayout({ children }: LocaleLayoutProps) {
-  return children;
+// export default function LocaleLayout({ children }: LocaleLayoutProps) {
+//   return children;
+// }
+
+export default async function LocaleLayout({ children, params }: { children: ReactNode, params: Promise<{locale: string}> }) {
+  const { locale } = await params;
+  return <div lang={isValidLocale(locale) ? locale : 'en'}>{children}</div>;
 }

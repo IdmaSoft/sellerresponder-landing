@@ -1,5 +1,4 @@
-﻿import { cookies } from "next/headers";
-import { en } from "@/dictionaries/en";
+﻿import { en } from "@/dictionaries/en";
 import { es } from "@/dictionaries/es";
 
 export const dictionaries = {
@@ -9,6 +8,13 @@ export const dictionaries = {
 
 export type Dictionary = typeof en;
 export type Locale = keyof typeof dictionaries;
+
+export const LOCALES = [
+  { label: "EN", locale: "en" },
+  { label: "ES", locale: "es" },
+] as const;
+
+export type LocaleOption = (typeof LOCALES)[number];
 
 export const defaultLocale: Locale = "en";
 export const LOCALE_COOKIE_NAME = "NEXT_LOCALE";
@@ -23,6 +29,7 @@ export function getDictionary(locale: Locale): Dictionary {
 }
 
 export async function getLocaleFromCookie(): Promise<Locale | undefined> {
+  const { cookies } = await import("next/headers");
   const cookieStore = await cookies();
   const locale = cookieStore.get(LOCALE_COOKIE_NAME)?.value;
   if (isValidLocale(locale)) {
