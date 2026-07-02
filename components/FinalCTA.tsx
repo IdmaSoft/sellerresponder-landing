@@ -32,7 +32,7 @@ export default function FinalCTA({ dictionary }: Props) {
             href="https://play.google.com/store/apps/details?id=com.idmasoft.robotrespondermsg"
             target="_blank"
             rel="noreferrer"
-            className="mt-10 inline-flex items-center gap-2 rounded-[1.5rem] bg-white px-6 py-3 text-sm font-semibold text-slate-950 shadow-sm shadow-slate-950/10 transition duration-200 hover:bg-slate-100"
+            className="mt-10 inline-flex w-full items-center justify-center gap-3 rounded-[1.5rem] bg-white px-7 py-4 text-base font-semibold text-slate-950 shadow-[0_16px_40px_rgba(15,23,42,0.18)] transition duration-200 hover:bg-slate-100 sm:w-auto"
           >
             <Image
               src="/images/logos/google-play-logo.svg"

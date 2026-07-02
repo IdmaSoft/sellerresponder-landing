@@ -6,10 +6,6 @@ type MetadataProps = {
   params: Promise<{ locale: string }>;
 };
 
-type LocaleLayoutProps = {
-  children: ReactNode;
-};
-
 export async function generateMetadata({ params }: MetadataProps): Promise<Metadata> {
   const { locale } = await params;
 
@@ -35,10 +31,6 @@ export async function generateMetadata({ params }: MetadataProps): Promise<Metad
     metadataBase: new URL(process.env.NEXT_PUBLIC_APP_URL ?? "http://localhost:3000"),
   };
 }
-
-// export default function LocaleLayout({ children }: LocaleLayoutProps) {
-//   return children;
-// }
 
 export default async function LocaleLayout({ children, params }: { children: ReactNode, params: Promise<{locale: string}> }) {
   const { locale } = await params;
