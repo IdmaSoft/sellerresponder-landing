@@ -26,6 +26,12 @@ npm run dev
 
 Open [http://localhost:3000](http://localhost:3000) in your browser.
 
+Create a local `.env` from `.env.example` when you need environment variables. The example includes:
+
+```env
+NEXT_PUBLIC_APP_URL=http://localhost:3000
+```
+
 ## Build for production
 
 ```bash

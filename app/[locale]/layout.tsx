@@ -25,8 +25,31 @@ export async function generateMetadata({ params }: MetadataProps): Promise<Metad
     openGraph: {
       title: dictionary.metadata.og.title,
       description: dictionary.metadata.og.description,
+      url: `${process.env.NEXT_PUBLIC_APP_URL}/${locale}`,
+      siteName: "SellerResponder",
+      images: [
+        {
+          url: "/images/social/og-image.png",
+          width: 1200,
+          height: 630,
+          alt: "SellerResponder - Automatic Replies for Facebook Marketplace",
+        },
+      ],
       type: "website",
       locale,
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: dictionary.metadata.og.title,
+      description: dictionary.metadata.og.description,
+      images: ["/images/social/og-image.png"],
+    },
+    alternates: {
+      canonical: `${process.env.NEXT_PUBLIC_APP_URL}/${locale}`,
+      languages: {
+        en: `${process.env.NEXT_PUBLIC_APP_URL}/en`,
+        es: `${process.env.NEXT_PUBLIC_APP_URL}/es`,
+      },
     },
     metadataBase: new URL(process.env.NEXT_PUBLIC_APP_URL ?? "http://localhost:3000"),
   };
