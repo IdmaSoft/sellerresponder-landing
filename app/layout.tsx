@@ -14,9 +14,9 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_APP_URL ?? "http://localhost:3000"),
-  icons: [
-    { rel: "icon", url: "/images/logos/sellerresponder-logo.svg", type: "image/svg+xml" },
-  ],
+  icons: {
+    icon: `${process.env.BASE_PATH || ""}/images/logos/sellerresponder-logo.svg`,
+  },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
