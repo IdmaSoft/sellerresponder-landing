@@ -1,5 +1,6 @@
 import Image from "next/image";
 import type { Dictionary } from "@/lib/getDictionary";
+import { images } from "@/assets/images"
 
 type Props = {
   dictionary: Dictionary;
@@ -11,11 +12,10 @@ export default function FinalCTA({ dictionary }: Props) {
       <div className="relative overflow-hidden rounded-[2rem] bg-[#084B8A] px-8 py-16 shadow-[0_40px_120px_-40px_rgba(15,23,42,0.35)] sm:px-12">
         <div className="pointer-events-none absolute inset-0 flex items-center justify-center opacity-20">
           <Image
-            src="/images/logos/sellerresponder-logo.svg"
+            src={images.appLogo}
             alt="SellerResponder logo background"
-            width={220}
-            height={220}
-            className="h-[220px] w-[220px] object-contain"
+            style={{ width: '220px', height: 'auto' }}
+            className="object-contain"
           />
         </div>
         <div className="relative mx-auto max-w-3xl text-center text-white">
@@ -35,7 +35,7 @@ export default function FinalCTA({ dictionary }: Props) {
             className="mt-10 inline-flex w-full items-center justify-center gap-3 rounded-[1.5rem] bg-white px-7 py-4 text-base font-semibold text-slate-950 shadow-[0_16px_40px_rgba(15,23,42,0.18)] transition duration-200 hover:bg-slate-100 sm:w-auto"
           >
             <Image
-              src="/images/logos/google-play-logo.svg"
+              src={images.playLogo}
               alt="Google Play logo"
               width={20}
               height={20}

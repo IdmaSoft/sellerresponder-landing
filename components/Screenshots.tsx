@@ -79,7 +79,7 @@ export default function Screenshots({ dictionary }: Props) {
           >
             {dictionary.screenshots.items.map((screenshot, i) => (
               <figure
-                key={screenshot.src}
+                key={i}
                 className={`
                   group relative snap-center flex flex-col flex-shrink-0
                   w-[200px] md:w-[224px] xl:w-[248px]
@@ -97,7 +97,7 @@ export default function Screenshots({ dictionary }: Props) {
 
                 {/* Image area */}
                 <div className="relative overflow-hidden rounded-t-[2.5rem]">
-                  <div className="aspect-[4/6]">
+                  <div className="relative aspect-[4/6]">
                     <Image
                       src={screenshot.src}
                       alt={screenshot.alt}

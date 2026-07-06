@@ -1,3 +1,5 @@
+import { images } from "@/assets/images";
+
 export const en = {
   metadata: {
     title: "SellerResponder - Automatic Replies for Facebook Marketplace Sellers",
@@ -84,37 +86,37 @@ export const en = {
     description: "Real app screens for Marketplace sellers, focused on fast replies and easy access to the templates you use every day.",
     items: [
       {
-        src: "/images/screenshots/screenshot1.png",
+        src: images.screenshots.screenshot1,
         alt: "SellerResponder dashboard screenshot",
         caption: "Everything you need, all in one place.",
       },
       {
-        src: "/images/screenshots/screenshot2.png",
+        src: images.screenshots.screenshot2,
         alt: "SellerResponder add title screenshot",
         caption: "Add or edit the exact title of your Marketplace listing.",
       },
       {
-        src: "/images/screenshots/screenshot3.png",
+        src: images.screenshots.screenshot3,
         alt: "SellerResponder view, copy, edit screenshot",
         caption: "View, copy, edit, or delete your saved post titles.",
       },
       {
-        src: "/images/screenshots/screenshot4.png",
+        src: images.screenshots.screenshot4,
         alt: "SellerResponder questions and responses screenshot",
         caption: "Turn common questions into automatic responses.",
       },
       {
-        src: "/images/screenshots/screenshot5.png",
+        src: images.screenshots.screenshot5,
         alt: "SellerResponder view, copy, edit replies screenshot",
         caption: "View, copy, edit, or delete your automatic replies.",
       },
         {
-        src: "/images/screenshots/screenshot6.png",
+        src: images.screenshots.screenshot6,
         alt: "SellerResponder test screenshot",
         caption: "Test your automatic replies before going live.",
       },
       {
-        src: "/images/screenshots/screenshot7.png",
+        src: images.screenshots.screenshot7,
         alt: "SellerResponder setup screenshot",
         caption: "Customize how automatic replies work.",
       },

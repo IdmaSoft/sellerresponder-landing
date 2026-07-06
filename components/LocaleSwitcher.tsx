@@ -8,6 +8,8 @@ type Props = {
   locale: Locale;
 };
 
+const BASE_PATH = process.env.NEXT_PUBLIC_BASE_PATH || "";
+
 export default function LocaleSwitcher({ locale }: Props) {
   const pathname = usePathname();
 
@@ -34,7 +36,7 @@ export default function LocaleSwitcher({ locale }: Props) {
         {LOCALES.map((option) => (
           <a
             key={option.locale}
-            href={`/${option.locale}${currentPath}`}
+            href={`${BASE_PATH}/${option.locale}${currentPath}`}
             className={`block px-4 py-2 text-sm font-medium hover:bg-slate-50 ${
               option.locale === locale ? "text-slate-950 font-semibold" : "text-slate-500"
             }`}

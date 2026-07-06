@@ -1,5 +1,6 @@
 import Image from "next/image";
 import type { Dictionary } from "@/lib/getDictionary";
+import { images } from "@/assets/images";
 
 type Props = {
   dictionary: Dictionary;
@@ -37,7 +38,7 @@ export default function Hero({ dictionary }: Props) {
                   className="inline-flex w-full max-w-xs items-center justify-center gap-2 rounded-full bg-[#0A66C2] px-6 py-4 text-base font-semibold text-white shadow-lg shadow-[#0A66C2]/20 transition duration-200 hover:bg-[#084B8A] sm:w-auto sm:px-5 sm:py-3 sm:text-sm"
                 >
                   <Image
-                    src="/images/logos/google-play-logo.svg"
+                    src={images.playLogo}
                     alt="Google Play logo"
                     width={20}
                     height={20}
@@ -70,10 +71,11 @@ export default function Hero({ dictionary }: Props) {
             <div className="relative mx-auto w-[90%] max-w-[280px] aspect-[9/16] rounded-[1.5rem] top-8">
               <div className="relative z-20 h-[90%] w-[90%] mx-auto overflow-hidden rounded-[1.5rem]">
                 <Image
-                  src="/images/screenshots/sellerresponder-chat.png"
+                  src={images.heroChat}
                   alt="SellerResponder desktop response screenshot"
                   fill
                   className="object-contain"
+                  sizes="280px"
                 />
               </div>
             </div>

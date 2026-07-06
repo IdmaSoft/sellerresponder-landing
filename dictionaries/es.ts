@@ -1,3 +1,5 @@
+import { images } from "@/assets/images";
+
 export const es = {
   metadata: {
     title: "SellerResponder - Respuestas automáticas para vendedores de Facebook Marketplace",
@@ -87,37 +89,37 @@ export const es = {
       "Capturas reales de la aplicación para vendedores de Marketplace, diseñadas para responder más rápido y acceder fácilmente a las plantillas que utilizas todos los días.",
     items: [
       {
-        src: "/images/screenshots/screenshot1.png",
+        src: images.screenshots.screenshot1,
         alt: "Captura del panel principal de SellerResponder",
         caption: "Todo lo que necesitas, en un solo lugar.",
       },
       {
-        src: "/images/screenshots/screenshot2.png",
+        src: images.screenshots.screenshot2,
         alt: "Captura para agregar un título en SellerResponder",
         caption: "Agrega o edita fácilmente el título exacto de tu publicación en Marketplace.",
       },
       {
-        src: "/images/screenshots/screenshot3.png",
+        src: images.screenshots.screenshot3,
         alt: "Captura para ver, copiar y editar títulos en SellerResponder",
         caption: "Visualiza, copia, edita o elimina los títulos guardados de tus publicaciones.",
       },
       {
-        src: "/images/screenshots/screenshot4.png",
+        src: images.screenshots.screenshot4,
         alt: "Captura de preguntas y respuestas en SellerResponder",
         caption: "Convierte las preguntas más frecuentes en respuestas automáticas.",
       },
       {
-        src: "/images/screenshots/screenshot5.png",
+        src: images.screenshots.screenshot5,
         alt: "Captura para ver, copiar y editar respuestas en SellerResponder",
         caption: "Visualiza, copia, edita o elimina tus respuestas automáticas.",
       },
       {
-        src: "/images/screenshots/screenshot6.png",
+        src: images.screenshots.screenshot6,
         alt: "Captura de prueba de SellerResponder",
         caption: "Prueba tus respuestas automáticas antes de activarlas.",
       },
       {
-        src: "/images/screenshots/screenshot7.png",
+        src: images.screenshots.screenshot7,
         alt: "Captura de configuración de SellerResponder",
         caption: "Personaliza el funcionamiento de las respuestas automáticas.",
       },
